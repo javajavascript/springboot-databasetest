@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- the namespace defines the location of the Java interface -->
+<!-- the operation names here must match the method namesin the interface -->
+<!-- PostMapper.xml file name must be same as PostMapper.java file name-->
+<mapper namespace="com.example.app.dao.PostMapper">
+	
+	<!-- the column property must match the column name in the database -->
+	<!-- the property property must match the property name in the java code -->
+	<resultMap id = "PostMap" type = "com.example.app.model.Post">
+		<result column = "name" property = "name"/>
+		<result column = "message" property = "message"/>
+	</resultMap>
+	
+	<!-- the id must match the name of the function in the java code -->
+	<!-- the result map must match the id of the result map above -->
+	<select id = "getPosts" resultMap = "PostMap">
+		SELECT name, message FROM chats
+	</select>
+
+	<insert id="insertPost">
+		INSERT INTO chats (name, message)
+		VALUES (#{name}, #{message})
+	</insert>
+	
+	
+	<select id = "getPostsFrom" resultMap = "PostMap">
+		SELECT name, message FROM chats WHERE name = #{name}
+	</select>
+	
+	<!-- the #{variable} must match the @Param ("variable") in the mapper of the java code -->
+	
+</mapper>

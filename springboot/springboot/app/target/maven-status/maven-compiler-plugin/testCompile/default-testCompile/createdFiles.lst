@@ -1,0 +1,3 @@
+com\example\app\AppApplicationTests.class
+com\example\app\dao\PostDaoTest.class
+com\example\app\dao\PostDaoImplIntegrationTest.class
