@@ -8,6 +8,8 @@ Make sure Sring Boot version, JDK version, and MyBatis version are all compatibl
 
 The error message will never tell you that the version is wrong or incompatible! You have to check these yourself, and people just figure it out with experience
 
+This kind of problem doesn't happen in JavaScript Node JS because the console clearly tells you when a package dependency version is outdated or depreciated. Spring Boot doesn't say anything!
+
 -------------------------------------------------------------
 
 Framework Important Note
